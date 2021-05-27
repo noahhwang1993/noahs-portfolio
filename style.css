@@ -135,7 +135,7 @@ p {
 .navbar__toggle-btn {
   position: absolute;
   top: 24px;
-  right: 32px;
+  right: 20px;
   font-size: 24px;
   color: var(--color-white);
   display: none;
