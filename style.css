@@ -42,6 +42,7 @@ body {
   font-family: "Open Sans", sans-serif;
   margin: 0;
   cursor: default;
+  min-width: 280px;
 }
 
 a {
@@ -101,7 +102,10 @@ p {
   background-color: var(--color-black);
   align-items: center;
   color: var(--color-white);
-  padding: 16px;
+  padding: 20px;
+  position: sticky;
+  top: 0;
+  z-index: 1;
 }
 
 .navbar__menu {
@@ -126,6 +130,15 @@ p {
 
 .navbar__logo {
   font-size: var(--font-medium);
+}
+
+.navbar__toggle-btn {
+  position: absolute;
+  top: 24px;
+  right: 32px;
+  font-size: 24px;
+  color: var(--color-white);
+  display: none;
 }
 
 /* Home */
@@ -307,8 +320,10 @@ p {
 
 /* Work */
 
-.work_categories {
+.work__categories {
   margin: 40px;
+  display: flex;
+  justify-content: center;
 }
 
 .category__btn {
@@ -316,6 +331,8 @@ p {
   border-radius: var(--size-border-radius);
   font-size: var(--font-regular);
   padding: 8px 48px;
+  position: relative;
+  margin-right: 5px;
 }
 
 .category__btn.active,
@@ -327,7 +344,7 @@ p {
 .category__btn.active .category__count,
 .category__btn:hover .category__count {
   opacity: 1;
-  top: 0;
+  top: 2px;
 }
 
 .category__count {
@@ -338,9 +355,9 @@ p {
   height: 24px;
   line-height: 24px;
   display: inline-block;
-  position: relative;
+  position: absolute;
   top: -20px;
-  left: 16px;
+  right: 16px;
   opacity: 0;
   transition: all var(--animation-duration) ease-in;
 }
@@ -469,4 +486,108 @@ p {
 .contact__links i:hover {
   transform: scale(1.4);
   color: var(--color-yellow);
+}
+
+/* For below 768px screen width */
+@media screen and (max-width: 768px) {
+  .section {
+    padding: 25px;
+  }
+
+  .navbar__toggle-btn {
+    display: block;
+  }
+
+  #navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .navbar__menu {
+    flex-direction: column;
+    text-align: center;
+    width: 100%;
+    display: none;
+  }
+
+  .home__avatar {
+    width: 200px;
+    height: 200px;
+  }
+
+  .about__majors {
+    flex-direction: column;
+  }
+
+  .major {
+    margin-bottom: 38px;
+  }
+
+  .job {
+    flex-direction: column;
+    margin-bottom: 38px;
+  }
+
+  .job__title,
+  .job__description {
+    text-align: center;
+  }
+
+  .job__description {
+    width: auto;
+  }
+
+  .skillset {
+    flex-direction: column;
+  }
+
+  .work__categories {
+    flex-direction: column;
+    margin: 40px 0;
+  }
+
+  .category__btn {
+    padding: 8px 0;
+    margin-right: 0;
+    margin-bottom: 5px;
+  }
+
+  .project {
+    flex-grow: 1;
+  }
+
+  #testimonials h1 {
+    font-size: var(--font-medium);
+  }
+
+  .testimonial {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .testimonial:nth-child(even) {
+    flex-direction: column-reverse;
+  }
+
+  .testimonial__avatar {
+    width: 225px;
+    height: 150px;
+    margin-bottom: 40px;
+  }
+
+  .testimonial__avatar:nth-child(odd) {
+    margin-right: 0;
+  }
+
+  .testimonial__avatar:nth-child(even) {
+    margin-left: 0;
+  }
+
+  .contact__email {
+    font-size: var(--font-micro);
+  }
+}
+
+/* For below 280px screen width */
+@media screen and (max-width: 280px) {
 }
