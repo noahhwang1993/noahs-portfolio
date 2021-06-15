@@ -459,6 +459,7 @@ p {
 @media screen and (max-width: 768px) {
   .section {
     padding: 25px;
+    padding-top: 98px;
   }
   .navbar__toggle-btn {
     display: block;
