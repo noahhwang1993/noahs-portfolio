@@ -37,7 +37,15 @@ navbarMenu.addEventListener('click', (event) => {
         return;
     }
 
+    navbarMenu.classList.remove('open');
     scrollIntoView(link);
+});
+
+// Navbar toggle button for small screen
+const navbarToggleBtn = document.querySelector('.navbar__toggle-btn');
+
+navbarToggleBtn.addEventListener('click', (event) => {
+    navbarMenu.classList.toggle('open');
 });
 
 // Handle click on "contact me" button on home
@@ -66,7 +74,6 @@ workBtnContainer.addEventListener('click', (e) => {
 
     // Remove selection from the previous item and select the new one
     const active = document.querySelector('.category__btn.selected');
-    console.log(e.target.nodeName)
     const target = e.target.nodeName === 'BUTTON' ? e.target : e.target.parentNode;
     
     active.classList.remove('selected');
