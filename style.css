@@ -178,6 +178,9 @@ p {
   justify-content: space-between;
   margin: 80px 0;
 }
+.major {
+  flex-basis: 50%;
+}
 .major__icon {
   width: 170px;
   height: 170px;
@@ -254,7 +257,7 @@ p {
   color: var(--color-white);
 }
 .skillset__left {
-  flex-basis: 60%;
+  flex-basis: 50%;
   background-color: var(--color-dark-grey);
   padding: 20px 40px;
 }
@@ -275,12 +278,15 @@ p {
   background-color: var(--color-grey);
 }
 .skillset__right {
-  flex-basis: 40%;
+  flex-basis: 50%;
 }
 .tools {
   background-color: var(--color-grey);
+  padding: 20px 40px;
 }
-.tools,
+.tools .skill__bar {
+  background-color: var(--color-dark-white);
+}
 .etc {
   padding: 20px;
 }
